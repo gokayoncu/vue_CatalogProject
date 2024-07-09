@@ -1,26 +1,22 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
+<script setup lang="ts">
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+import { useRoute } from 'vue-router'
+import {ref, watch} from 'vue'
+import { defineAsyncComponent } from 'vue';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+const route = useRoute()
+const layout=ref()
+
+
+watch(()=>route.meta.layout,(value)=>{
+  layout.value=defineAsyncComponent(()=>import(`@/views/layout/${value}.vue`))
+})
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<template>
+  <component :is="layout" style="height:100vh"/>
+</template>
+
+<style scoped>
+
 </style>

@@ -1,0 +1,4 @@
+/// <reference types="vite/client" />
+
+VITE_URL='https://xuapnlwrfuwmeznxmhoh.supabase.co'
+VUE_APP_PASSWORD='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh1YXBubHdyZnV3bWV6bnhtaG9oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTk4NDQyODAsImV4cCI6MjAzNTQyMDI4MH0.5SCYENrew1TlJcX3tcaxwH7VAb0eys-qIcnPyBULD8w'
